@@ -18,3 +18,10 @@ mongoose.connect('mongodb://localhost:27017/nodeapi', {
 
 // Import models directory using require-dir lib
 requireDir('./src/models');
+
+// Set routes dir
+app.use('/api', require('./src/routes'));
+
+app.listen(PORT, () => {
+  console.log(`Server up and running on port ${PORT}`);
+});
